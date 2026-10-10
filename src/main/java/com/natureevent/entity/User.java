@@ -6,91 +6,98 @@ import jakarta.persistence.*;
 @Table(name = "users")
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @Column(nullable = false)
-    private String name;
+	@Column(nullable = false)
+	private String name;
 
-    @Column(nullable = false, unique = true)
-    private String username;
+	@Column(nullable = false, unique = true)
+	private String username;
 
-    @Column(nullable = false, unique = true)
-    private String email;
+	@Column(nullable = false, unique = true)
+	private String email;
 
-    @Column(nullable = false)
-    private String password;
+	@Column(nullable = false)
+	private String password;
 
-    @Column
-    private String city;
+	@Column
+	private String city;
 
-    @Column
-    private String bio;
+	@Column
+	private String bio;
 
-    // Default constructor
-    public User() {
-    }
+	// =========================================================
+	// CONSTRUCTORS
+	// =========================================================
 
-    public User(String name, String username, String email,
-                String password, String city, String bio) {
-        this.name = name;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.city = city;
-        this.bio = bio;
-    }
+	public User() {
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public User(String name, String username, String email, String password, String city, String bio) {
 
-    public String getName() {
-        return name;
-    }
+		this.name = name;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.city = city;
+		this.bio = bio;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	// =========================================================
+	// GETTERS / SETTERS
+	// =========================================================
 
-    public String getUsername() {
-        return username;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public String getCity() {
-        return city;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public String getBio() {
-        return bio;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getBio() {
+		return bio;
+	}
+
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
 }

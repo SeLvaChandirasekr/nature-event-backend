@@ -3,7 +3,9 @@ package com.natureevent.controller;
 import com.natureevent.dto.UserRequestDTO;
 import com.natureevent.dto.UserResponseDTO;
 import com.natureevent.service.UserService;
+
 import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,14 +20,23 @@ public class UserController {
 		this.userService = userService;
 	}
 
-	@PostMapping
-	public UserResponseDTO createUser(@Valid @RequestBody UserRequestDTO userRequestDTO) {
+	// =========================================================
+	// CREATE USER
+	// =========================================================
 
-		return userService.createUser(userRequestDTO);
+	@PostMapping
+	public UserResponseDTO createUser(@Valid @RequestBody UserRequestDTO request) {
+
+		return userService.createUser(request);
 	}
+
+	// =========================================================
+	// GET ALL USERS
+	// =========================================================
 
 	@GetMapping
 	public List<UserResponseDTO> getAllUsers() {
+
 		return userService.getAllUsers();
 	}
 }
