@@ -66,11 +66,12 @@ public class SecurityConfig {
 
 		CorsConfiguration configuration = new CorsConfiguration();
 
-		// React frontend (localhost and deployed Vercel domains)
+		// React frontend (localhost, Vercel, and Netlify domains)
 		configuration.setAllowedOriginPatterns(List.of(
 				"http://localhost:[*]",
 				"http://127.0.0.1:[*]",
-				"https://*.vercel.app"
+				"https://*.vercel.app",
+				"https://*.netlify.app"
 		));
 
 		// HTTP methods
