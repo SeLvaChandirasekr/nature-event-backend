@@ -42,7 +42,7 @@ public class SecurityConfig {
 				.authorizeHttpRequests(auth -> auth
 
 						// Public APIs
-						.requestMatchers("/api/health", "/api/auth/**").permitAll()
+						.requestMatchers("/", "/api/health", "/api/auth/**").permitAll()
 
 						// User registration
 						.requestMatchers(HttpMethod.POST, "/api/users").permitAll().requestMatchers("/api/locations/**")
